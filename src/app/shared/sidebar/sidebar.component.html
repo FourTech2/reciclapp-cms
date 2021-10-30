@@ -1,5 +1,11 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <ul class="nav">
+    <li class="nav-item" [ngClass]="{ 'active': icons.isActive }">
+      <a class="nav-link" routerLink="/registrar-materiales">
+        <span class="menu-title">Materiales</span>
+        <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+      </a>
+    </li>
     <li class="nav-item" [ngClass]="{ 'active': dashboard.isActive }">
       <a class="nav-link" routerLink="/dashboard" routerLinkActive #dashboard="routerLinkActive">
         <span class="menu-title">Dashboard</span>
@@ -53,6 +59,7 @@
         <i class="mdi mdi-contacts menu-icon"></i>
       </a>
     </li>
+  
     <li class="nav-item" [ngClass]="{ 'active' : blankPage.isActive || login.isActive || register.isActive || error404.isActive || error500.isActive }">
       <a class="nav-link" (click)="samplePagesCollapsed = !samplePagesCollapsed"  [attr.aria-expanded]="samplePagesCollapsed" aria-controls="auth">
         <span class="menu-title">Sample Pages</span>

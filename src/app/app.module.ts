@@ -16,6 +16,10 @@ import { TodoComponent } from './apps/todo-list/todo/todo.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { ContentAnimateDirective } from './shared/directives/content-animate.directive';
 import { TodoListComponent } from './apps/todo-list/todo-list.component';
+/* import { AngularFireModule } from '@angular/fire';
+import { AngularFirestore } from '@angular/fire/firestore'; */
+import { environment } from 'src/environments/environment';
+import { RegistrarMaterialesComponent } from './registrar-materiales/registrar-materiales.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,8 @@ import { TodoListComponent } from './apps/todo-list/todo-list.component';
     TodoListComponent,
     TodoComponent,
     SpinnerComponent,
-    ContentAnimateDirective
+    ContentAnimateDirective,
+    RegistrarMaterialesComponent
   ],
   imports: [
     BrowserModule,
@@ -36,9 +41,10 @@ import { TodoListComponent } from './apps/todo-list/todo-list.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    ChartsModule
+    ChartsModule,
   ],
-  providers: [ThemeService],
+  //providers: [AngularFirestore],
+ providers: [ThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

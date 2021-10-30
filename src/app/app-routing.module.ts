@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './user-pages/login/login.component';
-
+import { RegistrarMaterialesComponent } from './registrar-materiales/registrar-materiales.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -16,6 +16,8 @@ const routes: Routes = [
   { path: 'apps', loadChildren: () => import('./apps/apps.module').then(m => m.AppsModule) },
   { path: 'user-pages', loadChildren: () => import('./user-pages/user-pages.module').then(m => m.UserPagesModule) },
   { path: 'error-pages', loadChildren: () => import('./error-pages/error-pages.module').then(m => m.ErrorPagesModule) },
+  { path: 'registrar-materiales', component: RegistrarMaterialesComponent },
+ // { path: 'registrar-materiales', loadChildren: () => import('./registrar-materiales/registrar-materiales.module').then(m => m.RegistrarMaterialesModule) },
   { path: 'dashboard', component:DashboardComponent},
 ];
 
