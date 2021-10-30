@@ -69,5 +69,18 @@
         </ul>
       </div>
     </li>
+    <li class="nav-item" [ngClass]="{'active' : cupon.isActive }">
+      <a class="nav-link" (click)="uiBasicCollapsed = !uiBasicCollapsed" [attr.aria-expanded]="uiBasicCollapsed" aria-controls="ui-basic">
+        <span class="menu-title">Patrocinadores</span>
+        <i class="menu-arrow"></i>
+        <i class="mdi mdi-account-multiple-outline"></i>
+      </a>
+      <div class="collapse" id="ui-basic" [ngbCollapse]="!uiBasicCollapsed">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" routerLink="sponsors/coupons" routerLinkActive="active" #cupon="routerLinkActive">Cúpones <i class="mdi mdi-cards"></i></a></li>
+        
+        </ul>
+      </div>
+    </li>
   </ul>
 </nav>

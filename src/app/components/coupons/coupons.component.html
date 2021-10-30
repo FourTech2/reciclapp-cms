@@ -1,0 +1,69 @@
+<p>coupons works!</p>
+<div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Cúpones</h4>
+        <p class="card-description">
+         <a class="btn btn-gradient-primary btn-fw" (click)="activeForm=true" *ngIf="activeForm==false">Crear cupon </a>
+        </p>
+        <div class="table-responsive" *ngIf="activeForm==false;else formCoupon">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Patrocinador</th>
+                <th>Titúlo</th>
+                <th>Fecha de expiración</th>
+                <th>Estado</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr *ngFor="let item of items | async">
+                <td>{{item.title}}</td>
+                
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+        <ng-template #formCoupon>
+          <form class="forms-sample">
+            <div class="row">
+              <div class="form-group col-xs-12 col-md-6">
+                <label for="titulo">Titúlo</label>
+                <input type="text" class="form-control" id="titulo" placeholder="Titúlo">
+              </div>
+              <div class="form-group col-xs-12 col-md-6">
+                <label for="descripcion">Descripción</label>
+                <input type="text" class="form-control" id="descripcion" placeholder="Descripción">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-xs-12 col-md-6">
+                <label for="titulo">Precio</label>
+                <input type="text" class="form-control" id="titulo" placeholder="Precio">
+              </div>
+              <div class="form-group col-xs-12 col-md-6">
+                <label for="descripcion">Fecha de expiración</label>
+                <input type="date" class="form-control" id="descripcion" placeholder="Descripción">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-xs-12 col-md-6">
+                <label for="sponsor">Proveedor</label>
+                <select class="form-control form-control-lg" id="sponsor">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-gradient-primary mr-2">crear</button>
+            <button class="btn btn-light">Cancelar</button>
+          </form>
+        </ng-template>
+      </div>
+    </div>
+  </div>
